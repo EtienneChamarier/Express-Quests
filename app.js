@@ -19,10 +19,11 @@ app.get("/api/users/:id", usersHandler.getUserById);
 app.get("/api/movies", movieHandlers.getMovies);
 app.get("/api/movies/:id", movieHandlers.getMovieById);
 
-app.post("/api/movies", validateMovie, movieHandlers.postMovie);
-app.post("/api/users", validateUser, users.postUser);
+app.post("/api/movies", movieHandlers.postMovie);
+app.post("/api/users", usersHandler.postUsers);
 
-
+app.put("/api/movies/:id", movieHandlers.updateMovie);
+app.put("/api//api/movies/:id", usersHandler.updateUsers);
 
 app.listen(port, (err) => {
   if (err) {
@@ -33,5 +34,6 @@ app.listen(port, (err) => {
 });
 
 app.get("/", welcome);
+
 
 
